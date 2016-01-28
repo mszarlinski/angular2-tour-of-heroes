@@ -2,8 +2,7 @@ import {Component} from 'angular2/core';
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/hero.list.html',
-    styleUrls: ['app/heroes.css']
+    templateUrl: 'app/hero.list.html'
 
 })
 export class AppComponent {
@@ -12,7 +11,6 @@ export class AppComponent {
 
     constructor() {
         this.title = 'Tour of Heroes';
-        //this.hero = {id: 1, name: 'Windstorm'};
         this.heroes = HEROES;
     }
 }
