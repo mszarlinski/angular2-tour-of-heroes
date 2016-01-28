@@ -1,10 +1,15 @@
 import {Injectable} from 'angular2/core';
 import {Hero} from './hero';
 
+const TWO_SECONDS:int = 2000;
+
 @Injectable() // not necessary in this case
 export class HeroService {
     getHeroes() {
-        return HEROES;
+        //return Promise.resolve(HEROES);
+
+        return new Promise<Hero[]>(resolve =>
+            setTimeout(() => resolve(HEROES), TWO_SECONDS));
     }
 }
 
