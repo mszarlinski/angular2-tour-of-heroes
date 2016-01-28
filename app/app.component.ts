@@ -1,10 +1,12 @@
 import {Component} from 'angular2/core';
+import {Hero} from './hero';
+import {HeroDetails} from './hero.details';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/hero.list.html',
-    styleUrls: ['app/heroic.css']
-
+    styleUrls: ['app/heroic.css'],
+    directives: [HeroDetails]
 })
 export class AppComponent {
     title:string;
@@ -20,11 +22,6 @@ export class AppComponent {
         console.log('selected hero = ', hero);
         this.selectedHero = hero;
     }
-}
-
-interface Hero {
-    constructor(public id:int,
-                public name:string);
 }
 
 var HEROES:Hero[] = [
