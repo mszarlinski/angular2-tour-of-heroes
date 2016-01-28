@@ -2,16 +2,23 @@ import {Component} from 'angular2/core';
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/hero.list.html'
+    templateUrl: 'app/hero.list.html',
+    styleUrls: ['app/heroic.css']
 
 })
 export class AppComponent {
     title:string;
     heroes:Hero[];
+    selectedHero:Hero;
 
     constructor() {
         this.title = 'Tour of Heroes';
         this.heroes = HEROES;
+    }
+
+    onSelect(hero:Hero):void {
+        console.log('selected hero = ', hero);
+        this.selectedHero = hero;
     }
 }
 

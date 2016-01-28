@@ -21,10 +21,15 @@ System.register(['angular2/core'], function(exports_1) {
                     this.title = 'Tour of Heroes';
                     this.heroes = HEROES;
                 }
+                AppComponent.prototype.onSelect = function (hero) {
+                    console.log('selected hero = ', hero);
+                    this.selectedHero = hero;
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        templateUrl: 'app/hero.list.html'
+                        templateUrl: 'app/hero.list.html',
+                        styleUrls: ['app/heroic.css']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
