@@ -1,21 +1,23 @@
 import {Component} from 'angular2/core';
 import {Hero} from './hero';
 import {HeroDetails} from './hero.details';
+import {HeroService} from './hero.service';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/hero.list.html',
     styleUrls: ['app/heroic.css'],
-    directives: [HeroDetails]
+    directives: [HeroDetails],
+    providers: [HeroService]
 })
 export class AppComponent {
     title:string;
     heroes:Hero[];
     selectedHero:Hero;
 
-    constructor() {
+    constructor(private _heroService:HeroService) {
         this.title = 'Tour of Heroes';
-        this.heroes = HEROES;
+        this.heroes = _heroService.getHeroes(); // bad practice - complex init in constructor
     }
 
     onSelect(hero:Hero):void {
